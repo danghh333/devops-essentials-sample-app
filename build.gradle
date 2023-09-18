@@ -20,3 +20,14 @@ task build {
 	new File("src/${labState}.state").text = " "
 }
 build.dependsOn test
+
+plugins {
+  id "org.sonarqube" version "4.2.1.3168"
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "test"
+    property "sonar.projectName", "test"
+  }
+}
